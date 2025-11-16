@@ -1,0 +1,17 @@
+# Stage 1: Build the Go application binary
+FROM golang:1.24.0 AS builder
+WORKDIR /app
+COPY . .
+# masuk ke folder main.go shopping
+WORKDIR /app/app/shopping
+RUN go build -o shopping main.go
+
+# Stage 2: Create a minimal runtime image and running the application
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY .env .
+COPY --from=builder /app/app/shopping/shopping /app/shopping
+EXPOSE 9063
+CMD ["/app/shopping"]
