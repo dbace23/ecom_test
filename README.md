@@ -108,3 +108,6 @@ Total Points : 100
 Notes Deadline : W2D1 - 9.00AM
 
 Keterlambatan pengumpulan tugas mengakibatkan skor GC 1 menjadi 0.
+
+postman https://lively-rocket-545453.postman.co/workspace/halim~a0049fb0-1789-4b34-9469-9c1dddeaa07e/request/24998527-73d1ef8e-3d0a-408f-8cb9-7e0e3950648c?action=share&creator=24998527&ctx=documentation
+
